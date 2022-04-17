@@ -17,19 +17,27 @@ public class LionTest {
     @Test
     public void checkGetFoodLionReturnsCorrectValue() throws Exception {
         Lion lion = new Lion("Самец", new Feline());
-        var expectedFood = List.of("Животные", "Птицы", "Рыба");
+        List <String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         Assert.assertEquals(expectedFood, lion.getFood());
     }
+
     @Test
-    public void checkGetKittensReturnsCorrectValue() throws Exception {
+    public void checkGetKittensReturnsCorrectValueForMale() throws Exception {
         Lion lion = new Lion("Самец", new Feline());
        int expectedKittens = 1;
        int actualKittens = lion.getKittens();
        Assert.assertEquals(expectedKittens, actualKittens);
     }
     @Test
+    public void checkGetKittensReturnsCorrectValueForFemale() throws Exception {
+        Lion lion = new Lion("Самка", new Feline());
+        int expectedKittens = 1;
+        int actualKittens = lion.getKittens();
+        Assert.assertEquals(expectedKittens, actualKittens);
+    }
+    @Test
     public void checkGetKittensReturnsNewValueWithMock() throws Exception {
-        Lion lion = new Lion("Самец", new Feline());
+        Lion lion = new Lion("Самец", feline);
         int expectedKittens = 5;
         Mockito.when(feline.getKittens()).thenReturn(5);
         int actualKittens = feline.getKittens();
@@ -41,7 +49,4 @@ public class LionTest {
         boolean expectedMane = true;
         Assert.assertEquals(expectedMane, lion.doesHaveMane());
     }
-
-
-
 }

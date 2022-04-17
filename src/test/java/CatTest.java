@@ -3,6 +3,10 @@ import com.example.Feline;
 import com.example.Lion;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 public class CatTest {
@@ -15,13 +19,8 @@ public class CatTest {
     @Test
     public void checkGetFoodCatReturnsCorrectValue() throws Exception {
         Cat cat = new Cat(new Feline());
-        var expectedFoodCat = List.of("Животные", "Птицы", "Рыба");
+        List <String> expectedFoodCat = List.of("Животные", "Птицы", "Рыба");
         Assert.assertEquals(expectedFoodCat, cat.getFood());
     }
-    @Test
-    public void checkGetFoodCatReturnsNewValueWithMock() throws Exception {
-        Cat cat = new Cat(new Feline());
-        var expectedFoodCat = List.of("Животные", "Птицы", "Рыба");
-        Assert.assertEquals(expectedFoodCat, cat.getFood());
-    }
+
 }
