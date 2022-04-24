@@ -1,18 +1,9 @@
 import com.example.Feline;
-import com.example.Lion;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
-
 import java.util.List;
 
-@RunWith(MockitoJUnitRunner.class)
 public class FelineTest {
-    @Mock
-    Feline feline;
 
     @Test
     public void checkEatMeatReturnsCorrectValue() throws Exception {
@@ -31,11 +22,5 @@ public class FelineTest {
         Feline feline = new Feline();
         short expectedKittens = 1;
         Assert.assertEquals(expectedKittens, feline.getKittens());
-    }
-    @Test
-    public void checkGetKittensWithParametersReturnsCorrectValue(){
-        Feline feline = new Feline();
-        short expectedKittens = 1;
-        Assert.assertEquals(expectedKittens, feline.getKittens(1));
     }
 }

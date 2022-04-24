@@ -1,8 +1,6 @@
 import com.example.Feline;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
@@ -27,7 +25,7 @@ public class GetKittensParameterTest {
     @Test
     public void shouldCheckKittensCount(){
         Feline feline = new Feline();
-        int actual = feline.getKittens();
+        int actual = feline.getKittens(3);
         assertNotEquals("Количество не соответствует:", countOfKittens, actual);
     }
 }
